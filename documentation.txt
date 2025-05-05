@@ -1,0 +1,17 @@
+How to run this solution:
+
+- Upload the CloudFormation YAML to S3 and generate the stack launch URL.
+
+- Launch the stack using the URL (creates the IAM role).
+ - https://console.aws.amazon.com/cloudformation/home?region=ap-south-1#/stacks/create/review?templateURL=https://wibix-cfn-poc.s3.ap-south-1.amazonaws.com/readonly-stack.yaml
+
+- Create an EC2 instance and attach the role ReadOnlyAccessRole as instance profile.
+
+- SSH into the EC2 instance or use SSM.
+
+- Install Python and Boto3 if not already installed.
+
+- Upload and run the script:
+  - python3 fetch_inventory.py
+
+- Input the CloudFormation stack ARN to fetch inventory
